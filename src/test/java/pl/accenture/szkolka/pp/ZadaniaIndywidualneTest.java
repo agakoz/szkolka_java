@@ -11,7 +11,7 @@ class ZadaniaIndywidualneTest {
     @RegisterExtension
     LogCapturer logs = LogCapturer.create().captureForType(ZadaniaIndywidualne.class);
 
-    // TODO 3 utwórz testy dla metod z punktu 2
+    // DONE 3 utwórz testy dla metod z punktu 2
     @Test
     void getMyByte() {
         //given static variable of a type byte in a class
@@ -89,7 +89,10 @@ class ZadaniaIndywidualneTest {
         //then
         assertEquals(givenValue, returnedValue);
     }
-
+    /*
+                DONE 7 utwórz testy dla metod z punktów 4-6 dla testowania logowanych wartości, użyj
+                https://github.com/netmikey/logunit
+         */
     @Test
     void hello() {
         //given
