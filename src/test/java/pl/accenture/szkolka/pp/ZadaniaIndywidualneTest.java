@@ -1,11 +1,15 @@
 package pl.accenture.szkolka.pp;
 
+import io.github.netmikey.logunit.api.LogCapturer;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.RegisterExtension;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class ZadaniaIndywidualneTest {
+    @RegisterExtension
+    LogCapturer logs = LogCapturer.create().captureForType(ZadaniaIndywidualne.class);
 
     // TODO 3 utwórz testy dla metod z punktu 2
     @Test
@@ -84,5 +88,39 @@ class ZadaniaIndywidualneTest {
         var returnedValue = ZadaniaIndywidualne.isMyBool();
         //then
         assertEquals(givenValue, returnedValue);
+    }
+
+    @Test
+    void hello() {
+        //given
+        String shouldDisplay = "Hello";
+        //when
+        ZadaniaIndywidualne.hello();
+        // then
+        logs.assertContains(shouldDisplay);
+
+    }
+
+    @Test
+    @DisplayName("Lukasz -> Hello Lukasz")
+    void helloZImieniem() {
+        // given
+        var name = "Lukasz";
+        // when
+        ZadaniaIndywidualne.hello(name);
+        // then
+        logs.assertContains("Hello Lukasz");
+    }
+
+    @Test
+    @DisplayName("Agata -> Hello Agata")
+    void returnHello() {
+        // given
+        String shouldReturn = "Hello Agata";
+        String name = "Agata";
+        // when
+        String returnedValue = ZadaniaIndywidualne.returnHello(name);
+        // then
+        assertEquals(shouldReturn, returnedValue);
     }
 }

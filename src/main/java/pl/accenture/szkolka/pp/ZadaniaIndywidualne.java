@@ -1,5 +1,10 @@
 package pl.accenture.szkolka.pp;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import static java.util.logging.Logger.getLogger;
+
 public class ZadaniaIndywidualne {
     // DONE 1 zadeklaruj zmienne z typami prostymi występującymi z Javie
     //stałoprzecinkowe
@@ -47,14 +52,26 @@ public class ZadaniaIndywidualne {
     public static boolean isMyBool() {
         return myBool;
     }
-    // TODO 3 utwórz testy dla metod z punktu 2
+    // done 3 utwórz testy dla metod z punktu 2 w klasie testowej
 
     // TODO 4 utwórz metodę void wypisującą do loggera "Hello"
+    private static final Logger LOG = getLogger("pl.accenture.szkolka.pp.ZadaniaIndywidualne");
+
+    public static void hello(){
+        LOG.log(Level.INFO, "Hello");
+    }
 
     // TODO 5 utwórz metodę void wypisującą do loggera "Hello " + przekazany do metody argument (string)
 
+    public static void hello(String name){
+        LOG.log(Level.INFO, String.format("Hello %s%n", name));
+    }
+
     // TODO 6 utwórz metodę zwracającą  "Hello " + przekazany do metody argument (string)
 
+    public static String returnHello (String name){
+        return String.format("Hello %s", name);
+    }
     /*
             TODO 7 utwórz testy dla metod z punktów 4-6 dla testowania logowanych wartości, użyj
             https://github.com/netmikey/logunit
