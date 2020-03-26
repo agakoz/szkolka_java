@@ -52,4 +52,17 @@ class Krok2Test {
         logs.assertContains("10");
 
     }
+
+    @Test
+    @DisplayName("Kratka -> Kr")
+    void cutStringTillFirsLetterA() {
+        //given
+        String wordToCut = "Kratka";
+        String expectedWord = "Kr";
+        //when
+        String returnedWord = Krok2.cutStringBeforeFirsLetterA(wordToCut);
+        //then
+        assertEquals(expectedWord, returnedWord);
+
+    }
 }

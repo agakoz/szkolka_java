@@ -69,7 +69,17 @@ public class Krok2 {
             number++;
         } while (number <= 10);
     }
-// TODO 3 zaimplementuj metodę z uzyciem for i break
+// done 3 zaimplementuj metodę z uzyciem for i break
+    public static String cutStringBeforeFirsLetterA(String sentWord){
+        StringBuilder newString = new StringBuilder();
+        for(int i = 0; i < sentWord.length(); i++ ){
+            if(sentWord.toUpperCase().charAt(i) == 'A') break;
+
+            newString.append(sentWord.toString().charAt(i));
+        }
+        return newString.toString();
+
+    }
 // TODO 4 zaimplementuj metodę z uzyciem foreach i continue
 // TODO 5 Zaimplementuj dowolną metodę przyjmującą jako parametr vararg
 /*
