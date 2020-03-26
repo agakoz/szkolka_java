@@ -1,5 +1,7 @@
 package pl.accenture.szkolka.pp;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -69,11 +71,12 @@ public class Krok2 {
             number++;
         } while (number <= 10);
     }
-// done 3 zaimplementuj metodę z uzyciem for i break
-    public static String cutStringBeforeFirsLetterA(String sentWord){
+
+    // done 3 zaimplementuj metodę z uzyciem for i break
+    public static String cutStringBeforeFirsLetterA(String sentWord) {
         StringBuilder newString = new StringBuilder();
-        for(int i = 0; i < sentWord.length(); i++ ){
-            if(sentWord.toUpperCase().charAt(i) == 'A') break;
+        for (int i = 0; i < sentWord.length(); i++) {
+            if (sentWord.toUpperCase().charAt(i) == 'A') break;
 
             newString.append(sentWord.toString().charAt(i));
         }
@@ -81,6 +84,16 @@ public class Krok2 {
 
     }
 // TODO 4 zaimplementuj metodę z uzyciem foreach i continue
+
+    public static List<Integer> cutSevenFromList(List<Integer> listToBeChanged) {
+        List<Integer> newList = new ArrayList<>();
+        for (int num : listToBeChanged) {
+            if(num == 7) continue;
+            newList.add(num);
+        }
+        return newList;
+    }
+
 // TODO 5 Zaimplementuj dowolną metodę przyjmującą jako parametr vararg
 /*
         TODO 6 Zaimplementuj w metodę, która przeiteruje po poniższych tablicach i zaloguje wartości (przykład poniżej):

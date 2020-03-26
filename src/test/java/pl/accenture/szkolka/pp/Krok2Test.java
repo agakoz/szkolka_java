@@ -5,6 +5,11 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
+import javax.swing.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class Krok2Test {
@@ -64,5 +69,22 @@ class Krok2Test {
         //then
         assertEquals(expectedWord, returnedWord);
 
+    }
+
+    @Test
+    @DisplayName("2,7,2 -> 2,2")
+    void cutSevenFromList() {
+        //given
+        List<Integer> listToChange = new ArrayList<>();
+        listToChange.add(2);
+        listToChange.add(7);
+        listToChange.add(2);
+        List<Integer> expectedList = new ArrayList<>();
+        expectedList.add(2);
+        expectedList.add(2);
+        //when
+        List<Integer> returnedList = Krok2.cutSevenFromList(listToChange);
+        //then
+        assertEquals(expectedList, returnedList);
     }
 }
