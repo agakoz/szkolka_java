@@ -88,28 +88,41 @@ public class Krok2 {
     public static List<Integer> cutSevenFromList(List<Integer> listToBeChanged) {
         List<Integer> newList = new ArrayList<>();
         for (int num : listToBeChanged) {
-            if(num == 7) continue;
+            if (num == 7) continue;
             newList.add(num);
         }
         return newList;
     }
 
-// done 5 Zaimplementuj dowolną metodę przyjmującą jako parametr vararg
-    public static void logAll(String ... toLog){
+    // done 5 Zaimplementuj dowolną metodę przyjmującą jako parametr vararg
+    public static void logAll(String... toLog) {
         for (String info : toLog) {
             LOG.log(Level.INFO, info);
         }
     }
-/*
-        TODO 6 Zaimplementuj w metodę, która przeiteruje po poniższych tablicach i zaloguje wartości (przykład poniżej):
-          1-2-3-4-5-6-7-8
-          ...{
-                {
-                    {1,2}, {3,4}
-                },
-                {
-                    {5,6}, {7,8}
+
+    /*
+            done 6 Zaimplementuj w metodę, która przeiteruje po poniższych tablicach i zaloguje wartości (przykład poniżej):
+              1-2-3-4-5-6-7-8
+              ...{
+                    {
+                        {1,2}, {3,4}
+                    },
+                    {
+                        {5,6}, {7,8}
+                    }
+                };
+     */
+    public static void logAllFromTables(Integer[][][] mainTable) {
+
+        StringBuilder stringBuilder = new StringBuilder();
+        for (Integer[][] tableOfTables : mainTable) {
+            for (Integer[] table : tableOfTables) {
+                for (Integer num : table) {
+                    stringBuilder.append(num);
                 }
-            };
- */
+            }
+        }
+        LOG.log(Level.INFO, stringBuilder.toString().replace("","-").substring(1,stringBuilder.toString().replace("","-").length()-1));
+    }
 }
