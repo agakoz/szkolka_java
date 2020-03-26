@@ -3,6 +3,11 @@ package pl.accenture.szkolka.pp;
 public class Krok2 {
     // Wszystkie implementacje - razem z testami JUnit
 // TODO 1 zaimplementuj metodę z uzyciem if
+    public static boolean checkIfAdult(int age) {
+        if (age >= 18) return true;
+            else return false;
+
+        }
 // TODO 2 zaimplementuj metodę z uzyciem switch
 // TODO 2 zaimplementuj metodę z uzyciem (do) while
 // TODO 3 zaimplementuj metodę z uzyciem for i break
@@ -20,4 +25,4 @@ public class Krok2 {
                 }
             };
  */
-}
+    }
