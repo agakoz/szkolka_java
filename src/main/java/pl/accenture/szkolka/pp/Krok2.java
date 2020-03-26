@@ -83,7 +83,7 @@ public class Krok2 {
         return newString.toString();
 
     }
-// TODO 4 zaimplementuj metodę z uzyciem foreach i continue
+// done 4 zaimplementuj metodę z uzyciem foreach i continue
 
     public static List<Integer> cutSevenFromList(List<Integer> listToBeChanged) {
         List<Integer> newList = new ArrayList<>();
@@ -94,7 +94,12 @@ public class Krok2 {
         return newList;
     }
 
-// TODO 5 Zaimplementuj dowolną metodę przyjmującą jako parametr vararg
+// done 5 Zaimplementuj dowolną metodę przyjmującą jako parametr vararg
+    public static void logAll(String ... toLog){
+        for (String info : toLog) {
+            LOG.log(Level.INFO, info);
+        }
+    }
 /*
         TODO 6 Zaimplementuj w metodę, która przeiteruje po poniższych tablicach i zaloguje wartości (przykład poniżej):
           1-2-3-4-5-6-7-8

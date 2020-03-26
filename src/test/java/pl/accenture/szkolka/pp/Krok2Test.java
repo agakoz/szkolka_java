@@ -87,4 +87,14 @@ class Krok2Test {
         //then
         assertEquals(expectedList, returnedList);
     }
+
+    @Test
+    void logAll() {
+        //given
+        String [] toLog = new String[]{"one", "two"};
+        Krok2.logAll(toLog);
+        logs.assertContains("one");
+        logs.assertContains("two");
+
+    }
 }
