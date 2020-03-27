@@ -13,6 +13,6 @@ class BoatTest {
 
     @Test
     void startSailing() {
-        assertEquals(Boat.SAIL, new Boat().startSailing());
+        assertEquals(Boat.SAIL, new Boat().sail());
     }
 }
